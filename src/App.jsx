@@ -62,6 +62,7 @@ useEffect(() => {
                 })}
 </article>
 </div>
-
+  )
+}
 
 
