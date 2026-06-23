@@ -1,11 +1,11 @@
-import { ticketService } from "../services/ticketService.js"
+import { getAllTickets } from "../services/ticketService.js"
 import { useState, useEffect } from "react"
 import { Ticket } from "./Ticket.jsx"
 
 export const TicketList = () => {
     const [tickets, setTickets] = useState([])
     useEffect(() => { 
-        ticketService.getAllTickets().then(tickets => setTickets(tickets))
+      getAllTickets().then(tickets => setTickets(tickets))
     }, [])
     return (
         <div className="tickets">

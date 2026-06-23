@@ -1,4 +1,4 @@
-const Ticket = ({ ticket }) => {
+ export const Ticket = ({ ticket }) => {
     return (
         <div className="ticket">
             <div className="ticket-info">

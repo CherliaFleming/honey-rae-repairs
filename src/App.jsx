@@ -1,11 +1,12 @@
  import { useEffect, useState } from "react"
- import { getAllTickets } from "./services/ticketService"
+ import { getAllTickets } from "./services/ticketService.jsx"
+ import { TicketList } from "./components/TicketList.jsx"
  
  export const App = () => {
   const [allTickets, setAllTickets] = useState([])
   const [showEmergency, setShowEmergency] = useState(false)
   const [filteredTickets, setFilteredTickets] = useState([])
-
+  
   // useEffect to fetch tickets and set to allTickets on initial render
 useEffect(() => {
     getAllTickets().then((ticketsArray) => {
