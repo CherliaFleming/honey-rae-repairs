@@ -3,7 +3,7 @@
  import { getAllTickets } from "./services/ticketService.jsx"
  import { TicketList } from "./components/TicketList.jsx"
  import { CustomerList } from "./components/customers/CustomerList.jsx"
-
+import { EmployeeList } from "./employees/employeeList.jsx"
 
  export const App = () => {
   const [allTickets, setAllTickets] = useState([])
@@ -63,6 +63,7 @@ useEffect(() => {
             <input className="ticket-search" value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)}/>
             < TicketList ticketsArray = {filteredTickets} /> 
             < CustomerList />
+            < EmployeeList />
            </div>
   )
 }
