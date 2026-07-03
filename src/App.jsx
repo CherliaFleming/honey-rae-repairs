@@ -1,12 +1,16 @@
  import { useEffect, useState } from "react"
- import { getAllTickets } from "./services/ticketService.js"
+ import "./App.css"
+ import { getAllTickets } from "./services/ticketService.jsx"
  import { TicketList } from "./components/TicketList.jsx"
+ import { CustomerList } from "./components/customers/CustomerList.jsx"
+
 
  export const App = () => {
   const [allTickets, setAllTickets] = useState([])
   const [showEmergency, setShowEmergency] = useState(false)
   const [filteredTickets, setFilteredTickets] = useState([])
   const [searchTerm, setSearchTerm] = useState("")  
+  const [customers, setCustomers] = useState([])
 
   useEffect(() => {
     const foundTickets = allTickets.filter((ticket) => {
@@ -58,7 +62,8 @@ useEffect(() => {
             </div>
             <input className="ticket-search" value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)}/>
             < TicketList ticketsArray = {filteredTickets} /> 
-            </div>
+            < CustomerList />
+           </div>
   )
 }
 
