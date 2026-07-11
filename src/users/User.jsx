@@ -15,3 +15,9 @@ export const User = ({ user }) => {
     </div>
   )
 }
+
+export const getUserByemail = (email) => {
+  return fetch(`http://localhost:8088/users?email=${email}`).then((res) =>
+    res.json()
+  )
+}
