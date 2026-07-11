@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react"
 import { Route, Routes } from "react-router-dom"
 import { getAllTickets } from "../services/ticketService.jsx"
@@ -6,8 +5,12 @@ import { TicketList } from "../components/TicketList.jsx"
 import { CustomerList } from "../components/customers/CustomerList.jsx"
 import { EmployeeList } from "../employees/employeeList.jsx"
 import { EmployeeDetails } from "../employees/EmployeeDetails.jsx"
+import { EmployeeEdit } from "../components/EmployeeEdit.jsx"
+
 
 export const ApplicationViews = () => {
+  const currentUser = JSON.parse(localStorage.getItem("honey_user"))
+
   const [allTickets, setAllTickets] = useState([])
   const [showEmergency, setShowEmergency] = useState(false)
   const [filteredTickets, setFilteredTickets] = useState([])
@@ -52,6 +55,7 @@ export const ApplicationViews = () => {
           <Route index element={<EmployeeList />} />
           <Route path=":employeeId" element={<EmployeeDetails />} />
         </Route>
+        <Route path="/employee/edit" element={<EmployeeEdit currentUser={currentUser} />} />
       </Routes>
     </>
   )
